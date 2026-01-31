@@ -8,7 +8,8 @@
     "dev": " wrangler dev",
     "deploy": " wrangler deploy",
     "publish": " wrangler publish",
-    "build:docker": "vite build"
+    "build:docker": "vite build",
+    "format": "prettier --write client/"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.7",
+    "prettier": "^3.8.1",
     "terser": "^5.39.2",
     "vite": "^6.3.5",
     "wrangler": "^4.16.1"
