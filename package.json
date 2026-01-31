@@ -33,6 +33,7 @@
   "dependencies": {
     "@dicebear/core": "^9.2.2",
     "@dicebear/micah": "^9.2.2",
+    "@scure/base": "^2.0.0",
     "aes-js": "^3.1.2",
     "buffer": "^6.0.3",
     "dompurify": "^3.2.6",

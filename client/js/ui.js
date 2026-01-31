@@ -14,40 +14,21 @@ import { closeSettingsPanel } from './util.settings.js'
 import { t } from './util.i18n.js'
 import { updateChatInputStyle } from './chat.js'
 
+import { base58 } from '@scure/base'
+
 // Utility functions for security and error handling
 // 安全和错误处理工具函数
 
-// Simple encryption/decryption using base64 and character shifting
-// 使用base64和字符偏移的简单加密/解密
-function simpleEncrypt(text) {
-  if (!text) return ''
-  // Convert to base64 and shift characters
-  const base64 = btoa(unescape(encodeURIComponent(text)))
-  return base64
-    .split('')
-    .map((char) => {
-      const code = char.charCodeAt(0)
-      return String.fromCharCode(code + 3)
-    })
-    .join('')
+function stringToBase58(str) {
+  const encoder = new TextEncoder()
+  const data = encoder.encode(str)
+  return base58.encode(data)
 }
 
-function simpleDecrypt(encrypted) {
-  if (!encrypted) return ''
-  try {
-    // Reverse character shifting and decode base64
-    const shifted = encrypted
-      .split('')
-      .map((char) => {
-        const code = char.charCodeAt(0)
-        return String.fromCharCode(code - 3)
-      })
-      .join('')
-    return decodeURIComponent(escape(atob(shifted)))
-  } catch (error) {
-    console.warn('Failed to decrypt data:', error)
-    return ''
-  }
+function base58ToString(base58Str) {
+  const data = base58.decode(base58Str)
+  const decoder = new TextDecoder()
+  return decoder.decode(data)
 }
 
 // Validate room data
@@ -149,8 +130,8 @@ function handleShareAction() {
   const password = rd.password || ''
 
   // Encrypt room name and password
-  const encryptedRoom = simpleEncrypt(roomName)
-  const encryptedPwd = password ? simpleEncrypt(password) : ''
+  const encryptedRoom = stringToBase58(roomName)
+  const encryptedPwd = password ? stringToBase58(password) : ''
 
   // Create share URL with encrypted data
   let url = `${location.origin}${location.pathname}?r=${encodeURIComponent(encryptedRoom)}`
@@ -576,9 +557,9 @@ export function autofillRoomPwd(formPrefix = '') {
 
   if (encryptedRoom) {
     // New encrypted format
-    roomValue = simpleDecrypt(decodeURIComponent(encryptedRoom))
+    roomValue = base58ToString(decodeURIComponent(encryptedRoom))
     if (encryptedPwd) {
-      pwdValue = simpleDecrypt(decodeURIComponent(encryptedPwd))
+      pwdValue = base58ToString(decodeURIComponent(encryptedPwd))
     }
   } else if (plaintextRoom) {
     // Old plaintext format - show security warning
