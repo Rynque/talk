@@ -41,7 +41,6 @@ const LANGUAGES = {
       // Settings panel
       'settings.title': 'Settings',
       'settings.notification': 'Notification Settings',
-      'settings.theme': 'Theme Settings',
       'settings.language': 'Language Settings',
       'settings.desktop_notifications': 'Desktop Notifications',
       'settings.sound_notifications': 'Sound Notifications',
@@ -139,7 +138,6 @@ const LANGUAGES = {
       // Settings panel
       'settings.title': '设置',
       'settings.notification': '通知设置',
-      'settings.theme': '主题设置',
       'settings.language': '语言设置',
       'settings.desktop_notifications': '桌面通知',
       'settings.sound_notifications': '声音通知',

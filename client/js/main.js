@@ -24,12 +24,6 @@ import {
 } from './util.settings.js'
 import { t, updateStaticTexts } from './util.i18n.js'
 
-// 从 util.theme.js 中导入主题功能函数
-// Import theme functions from util.theme.js
-import {
-  initTheme, // 初始化主题 / Initialize theme
-} from './util.theme.js'
-
 // 从 util.dom.js 中导入常用 DOM 操作函数
 // Import common DOM manipulation functions from util.dom.js
 import {
@@ -134,7 +128,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // 由于我们已经在DOM加载前预先初始化了语言设置，这里不需要重复初始化
   // initSettings();
   // updateStaticTexts(); // 在初始化设置后更新静态文本 / Update static texts after initializing settings
-  initTheme() // 初始化主题 / Initialize theme
 
   const settingsBtn = $id('settings-btn') // 设置按钮 / Settings button
   if (settingsBtn) {
