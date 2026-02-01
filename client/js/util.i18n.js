@@ -78,7 +78,6 @@ const LANGUAGES = {
       // Actions and menu
       'action.share': 'Share',
       'action.exit': 'Exit',
-      'action.emoji': 'Emoji',
       'action.settings': 'Settings',
       'action.back': 'Back',
       'action.copied': 'Copied to clipboard!',
@@ -173,7 +172,6 @@ const LANGUAGES = {
       // Actions and menu
       'action.share': '分享',
       'action.exit': '退出',
-      'action.emoji': '表情',
       'action.settings': '设置',
       'action.back': '返回',
       'action.copied': '已复制到剪贴板！',
@@ -192,7 +190,7 @@ const LANGUAGES = {
       'system.secured': '已建立端到端安全连接',
       'system.private_message_failed': '无法发送私信给',
       'system.private_file_failed': '无法发送私密文件给',
-      'system.user_not_connected': '用户可能未完全连接。',
+      'system.user_not_connected': '用户可能未连接',
     },
   },
 }
@@ -339,11 +337,6 @@ export function updateStaticTexts() {
     attachBtn.title = t('file.attach_file', 'Attach file')
   }
 
-  // Update emoji button title
-  const emojiBtn = document.querySelector('.chat-emoji-btn')
-  if (emojiBtn) {
-    emojiBtn.title = t('action.emoji', 'Emoji')
-  }
   // Update settings button title
   const settingsBtn = document.getElementById('settings-btn')
   if (settingsBtn) {

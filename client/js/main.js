@@ -10,10 +10,6 @@ import { setupFileSend, handleFileMessage, downloadFile } from './util.file.js'
 // Import image processing functions from util.image.js
 import { setupImagePaste } from './util.image.js'
 
-// 从 util.emoji.js 中导入设置表情选择器的函数
-// Import setupEmojiPicker function from util.emoji.js
-import { setupEmojiPicker } from './util.emoji.js'
-
 // 从 util.settings.js 中导入设置面板的功能函数
 // Import functions for settings panel from util.settings.js
 import {
@@ -85,7 +81,6 @@ window.addSystemMsg = addSystemMsg
 window.addOtherMsg = addOtherMsg
 window.joinRoom = joinRoom
 window.notifyMessage = notifyMessage
-window.setupEmojiPicker = setupEmojiPicker
 window.handleFileMessage = handleFileMessage
 window.downloadFile = downloadFile
 
@@ -124,7 +119,6 @@ window.addEventListener('DOMContentLoaded', () => {
   setupInputPlaceholder()
   setupMoreBtnMenu()
   setupImagePreview()
-  setupEmojiPicker()
   // 由于我们已经在DOM加载前预先初始化了语言设置，这里不需要重复初始化
   // initSettings();
   // updateStaticTexts(); // 在初始化设置后更新静态文本 / Update static texts after initializing settings

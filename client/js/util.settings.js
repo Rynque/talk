@@ -87,7 +87,6 @@ function setupSettingsPanel() {
   } // Create settings content HTML
   settingsContent.innerHTML = `
 		<div class="settings-section">
-			<div class="settings-section-title">${t('settings.notification', 'Notification Settings')}</div>
 			<div class="settings-item">
 				<div class="settings-item-label">
 					<div>${t('settings.desktop_notifications', 'Desktop Notifications')}</div>
@@ -108,7 +107,6 @@ function setupSettingsPanel() {
 			</div>
 		</div>
 				<div class="settings-section">
-			<div class="settings-section-title">${t('settings.language', 'Language Settings')}</div>
 			<div class="settings-item">
 				<div class="settings-item-label">
 					<div>${t('settings.language_switch', 'Language')}</div>
