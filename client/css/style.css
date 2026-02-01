@@ -746,6 +746,7 @@ npx browserify ChatCrypt.cjs -o ChatCrypt.js .language-current {
 }
 
 .input-message-input {
+  min-height: 1.2rem;
   outline: none;
   border: none;
   background: transparent;

@@ -362,10 +362,6 @@ body {
   color: #30a8f7;
 }
 
-.input-message-input-init {
-  height: 1rem !important;
-}
-
 .bubble-img {
   max-width: 220px;
   max-height: 180px;
