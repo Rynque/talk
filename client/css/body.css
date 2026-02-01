@@ -363,7 +363,7 @@ body {
 }
 
 .input-message-input-init {
-  height: 37px;
+  height: 1rem !important;
 }
 
 .bubble-img {
